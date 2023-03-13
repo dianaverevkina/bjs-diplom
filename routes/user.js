@@ -15,7 +15,7 @@ router.post('/register', upload.none(), (request, response) => {
   }
 
   if (password === '') {
-    error += ' Поле "Пароль" обязательно для заполнения.';
+    error += 'Поле "Пароль" обязательно для заполнения.';
   }
 
   if (error !== '') {
