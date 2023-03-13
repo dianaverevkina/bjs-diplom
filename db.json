@@ -108,6 +108,18 @@
         "EUR": 0,
         "NTC": 0
       }
+    },
+    {
+      "created_at": "2023-03-13T10:30:57.631Z",
+      "login": "ivan55@demo.ru",
+      "password": "demo",
+      "id": 10,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
     }
   ],
   "favorites": {
