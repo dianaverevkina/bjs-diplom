@@ -58,12 +58,11 @@ moneyManager.conversionMoneyCallback = data => {
 //Перевод валюты
 moneyManager.sendMoneyCallback = data => {
   ApiConnector.transferMoney(data, response => {
-    let getter = Object.entries(favoritesList).find(person => +person[0] === data.to)[1];
     if (response.success) {
       ProfileWidget.showProfile(response.data);
-      moneyManager.setMessage(response.success, `Перевод ${data.amount} ${data.currency} ${getter} успешно выполнен`);
+      moneyManager.setMessage(response.success, `Перевод ${data.amount} ${data.currency} успешно выполнен`);
     } else {
-      moneyManager.setMessage(response.success, `Не удалось выполнить перевод ${data.amount} ${data.currency} ${getter}`);
+      moneyManager.setMessage(response.success, `Не удалось выполнить перевод ${data.amount} ${data.currency}`);
     }
   })
 }
@@ -73,10 +72,8 @@ moneyManager.sendMoneyCallback = data => {
 const favoritesWidget = new FavoritesWidget();
 
 //Hачальный список избранного
-let favoritesList;
 ApiConnector.getFavorites(response => {
   if (response.success) {
-    favoritesList = response.data;
     favoritesWidget.clearTable();
     favoritesWidget.fillTable(response.data);
     moneyManager. updateUsersList(response.data);
