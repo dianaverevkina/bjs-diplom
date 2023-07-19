@@ -27,7 +27,6 @@ function getCurrentStocks() {
 })
 }
 getCurrentStocks();
-// setInterval(getCurrentStocks, 60000);
 
 //Операции с деньгами
 const moneyManager = new MoneyManager();
